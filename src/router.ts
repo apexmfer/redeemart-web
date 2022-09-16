@@ -9,7 +9,7 @@ import Dashboard from './views/dashboard/Dashboard.vue'
  
 import Profile from './views/profile/Profile.vue'
  
-import Redeem from './views/Redeem.vue'
+import Claim from './views/Claim.vue'
 
 import ProfileOrderIndex from './views/profile/order/index.vue'
 
@@ -70,17 +70,17 @@ export default new Router({
 
 
     {
-      path: '/redeem',
-      name: 'redeem',
-      component: Redeem
+      path: '/claim',
+      name: 'claim',
+      component: Claim
     },
  
 
 
     {
-      path: '/redeem/:code',
-      name: 'redeem',
-      component: Redeem
+      path: '/claim/:network/:code',
+      name: 'claim',
+      component: Claim
     },
 
 

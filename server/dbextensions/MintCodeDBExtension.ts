@@ -6,15 +6,18 @@ import {MongoRecord} from "./MongoDBExtension"
  
   export interface MintCode extends MongoRecord{
     parentUserId:  string,
-    
-    
+
     code:string,
 
+    networkName:string,
+
+    projectId:string,
+    nonce:string,
+    signature:string,
 
     createdAt:string,
 
-
-    status: string //can be disabled temporarily 
+    status: string //starts out unclaimed 
   }
 
   
@@ -25,6 +28,12 @@ import {MongoRecord} from "./MongoDBExtension"
     parentUserId: {type:String, required:true},
    
     code: {type:String, required: true},
+
+    networkName: {type:String, required: true},
+
+    projectId: {type:String},
+    nonce: {type:String},
+    signature: {type:String},
 
     createdAt: {type:String},
 
