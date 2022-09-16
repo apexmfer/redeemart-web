@@ -9,7 +9,7 @@ import Dashboard from './views/dashboard/Dashboard.vue'
  
 import Profile from './views/profile/Profile.vue'
  
-import Map from './views/Map.vue'
+import Redeem from './views/Redeem.vue'
 
 import ProfileOrderIndex from './views/profile/order/index.vue'
 
@@ -66,12 +66,25 @@ export default new Router({
     },
 
 
+ 
+
 
     {
-      path: '/map',
-      name: 'map',
-      component: Map
+      path: '/redeem',
+      name: 'redeem',
+      component: Redeem
     },
+ 
+
+
+    {
+      path: '/redeem/:code',
+      name: 'redeem',
+      component: Redeem
+    },
+
+
+    
 
     
 
