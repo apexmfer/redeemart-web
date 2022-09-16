@@ -27,12 +27,11 @@ export function userIsAdmin(publicAddress:string){
 }
 
 
+export function routeTo( router:any, inputs:any  ) {
 
-export function routeTo( router:any, name:string, params:any ) {
+    console.log('router push',inputs)
 
-    
-
-    router.push(name,params)
+    router.push(inputs )
 }
 
 
@@ -46,4 +45,8 @@ export function redirectTo( path:string  ) {
 
 export function getWeb3StorageData(store:any){
     return store.state.web3Storage
+}
+
+export function getCurrentPageURL(){
+    return window.location.pathname
 }

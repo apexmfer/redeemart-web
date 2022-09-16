@@ -36,7 +36,9 @@ import ThreadController from './controllers/ThreadController'
 
 require('dotenv').config()
 
-const APP_NAME = 'ufodatabase' 
+const pjson = require('../package.json');
+
+const APP_NAME = pjson.databasePrefix
 
 
 let envmode = AppHelper.getEnvironmentName()

@@ -1,7 +1,6 @@
 import ServerModule from "./ServerModule";
 
-
- 
+const base64url = require('base64url');
 
 require('dotenv').config()
 
@@ -75,17 +74,60 @@ export default class OAuthModule extends ServerModule {
             return done(null, userProfile);
         }
         ));
+
+
+     
+        /*expressApp.get('/auth/google', 
+
+        passport.authenticate('google',
+         { 
+             scope : ['profile', 'email'],
+             state: stringifiedState
+            
+            }  ));
+
+            */
+
+        expressApp.get('/auth/google', function(req:any, res:any) {
+
+        let inputState = {} 
+        console.log(req)
+        if(req.query){
+            console.log('req query', req.query)
+
+            inputState={redirectBackTo: req.query.redirectBackTo}
+        }
+
+        console.log('inputState', JSON.stringify(  inputState ))
+        let stringifiedState =  base64url(JSON.stringify(  inputState ))
+    
         
-        expressApp.get('/auth/google', 
-        passport.authenticate('google', { scope : ['profile', 'email'] }));
+        passport.authenticate('google', {
+            scope:['profile', 'email'],
+            state: stringifiedState
+        })(req, res);
+        });
+
+              
+
+
         
         expressApp.get('/auth/google/callback', 
         passport.authenticate('google', { failureRedirect: '/error' }),
         async function(req, res)   {
             // Successful authentication 
+  
+            let parsedState = JSON.parse( base64url.decode(req.query.state ) )
+            console.log('callback req',parsedState)
 
-            //pass on the req inputs to /oauth/success to start the session 
-            res.redirect('/oauth/success');
+
+            if(parsedState.redirectBackTo){
+                res.redirect(`/oauth/success?redirectBackTo=${parsedState.redirectBackTo}`);
+            }else {
+                res.redirect('/oauth/success');
+            }
+
+            
         });
     
         

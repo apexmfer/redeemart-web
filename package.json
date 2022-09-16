@@ -1,7 +1,9 @@
 {
-  "name": "UfoDatabase",
+  "name": "IndieFuture",
   "version": "0.2.0",
-  "description": "Online collection of data relating to observed unidentified flying object phenomena.",
+  "databasePrefix":"indiefuture",
+  "header":"indiefuture",
+  "description": "Digital collectibles from local artists.",
   "scripts": {
     "build": "vue-cli-service build",
     "buildstaging": "vue-cli-service build --mode staging",
@@ -20,6 +22,7 @@
     "@emotion/css": "^11.9.0",
     "autoprefixer": "^9.4.5",
     "axios": "^0.21.1",
+    "base64url": "^3.0.1",
     "bignumber.js": "^9.0.2",
     "buffer-image-size": "^0.6.4",
     "chart.js": "^3.7.1",

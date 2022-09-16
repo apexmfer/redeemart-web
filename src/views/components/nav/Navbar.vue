@@ -30,7 +30,7 @@
  
         <ButtonDefault 
         customClass="border-2 px-4 mx-4 border-neutral-300 text-neutral-800 hover:text-neutral-600"
-        @clicked="routeTo($router,{name:'login'})">
+        @clicked="routeTo($router,{name:'login',query:{ redirectBackTo: getCurrentPageURL()}})">
           Sign Up
         </ButtonDefault>
          
@@ -38,7 +38,7 @@
          
         <ButtonDefault 
         customClass="px-4 mx-4 text-neutral-800  hover:text-neutral-600"
-        @clicked="routeTo($router,{name:'login'})"
+        @clicked="routeTo($router,{name:'login',query:{ redirectBackTo: getCurrentPageURL()}})"
         >
           Sign In
         </ButtonDefault>
@@ -98,7 +98,7 @@
 
 <script>
 
-import AppHelper, {routeTo,redirectTo} from '@/js/app-helper'
+import AppHelper, {routeTo,redirectTo,getCurrentPageURL} from '@/js/app-helper'
  
  
 import {isSignedIn} from '@/js/frontend-helper'
@@ -131,7 +131,7 @@ export default {
   },
   methods: {
 
-     routeTo,redirectTo,
+     routeTo,redirectTo,getCurrentPageURL,
      isSignedIn,
   /*
       web3IsActive(){          

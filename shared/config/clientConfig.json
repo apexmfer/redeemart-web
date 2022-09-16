@@ -3,9 +3,9 @@
     "production":{
        
         "externalRoutes": {
-         
-                        "api":"https://api.rqr.codes"
-                      }
+
+              "api":"https://api.indiefuture.com"
+            }
       
         
     },
@@ -24,9 +24,7 @@
  
         "api":"http://localhost:3000"
       }
-
- 
-           
+  
         
         
     } ,

@@ -43,7 +43,7 @@
                   bg: 'blue.500',
                 }"
 
-                @click="redirectTo('@api/auth/google')"
+                @click="redirectTo(getOAuthURL())"
                 >
                 Sign in with Google
               </CButton>
@@ -96,7 +96,19 @@ export default {
   },
   methods: {
 
-     routeTo,redirectTo
+     routeTo,redirectTo,
+
+
+     getOAuthURL(){
+       let redirectBackTo = this.$route.query.redirectBackTo
+       if(redirectBackTo){
+         return `@api/auth/google?redirectBackTo=${redirectBackTo}`
+       }
+
+       return '@api/auth/google'
+
+
+     }
   }
 }
  

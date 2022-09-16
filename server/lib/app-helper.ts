@@ -13,11 +13,16 @@ const serverConfig = require('../serverconfig.json')
 
 const imageUploadValidations = require('../../shared/config/imageUploadValidations.json')
 
+
+const pjson = require('../../package.json');
+
+ 
+
 export default class AppHelper  {
 
   static getAppName() : string {
 
-    return 'ufodatabase'
+    return pjson.databasePrefix
   }
 
   static getEnvironmentName() : string{

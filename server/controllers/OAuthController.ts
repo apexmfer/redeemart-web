@@ -42,9 +42,17 @@ export default class OAuthController extends APIController  {
 
     
     authSuccessRedirect: ControllerMethod = async (req: any) => {
-         
+      
+        let redirectBackTo = '/'
+
+        if(req.query.redirectBackTo){
+            redirectBackTo = req.query.redirectBackTo
+        }
+
+        console.log('oauth success!  redirecting to ',redirectBackTo)
+
   
-        return {success:true, data:{url:'/'}, specialAction: 'redirect'}
+        return {success:true, data:{url:redirectBackTo}, specialAction: 'redirect'}
     }
 
 
