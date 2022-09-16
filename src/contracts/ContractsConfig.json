@@ -1,0 +1,21 @@
+{
+
+
+    "mainnet":{
+
+
+
+    },
+    "goerli":{
+        "UndergroundArt":{
+            "proxyContractAddress":"0x3c0d23ffab351f69116029f63919061e1ae9c142",
+            "implementationContractAddress":"0x1b14ad65ab27703f40291274c5fba7a1f443840d"
+
+        }
+
+
+    }
+
+
+
+}

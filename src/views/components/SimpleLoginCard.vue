@@ -14,9 +14,9 @@
 
       <CStack  :spacing=8 mx='auto' maxW='lg' py=12 px=6>
         <CStack align='center'>
-          <CHeading fontSize='4xl'>Sign in to RQR Codes</CHeading>
+          <CHeading fontSize='4xl'>Sign in to Indie Future</CHeading>
           <CText fontSize='lg' color='gray.600'>
-            to start building <CLink color='blue.400'>QR Codes</CLink> ✌️
+            to start collecting ✌️
           </CText>
         </CStack>
         <CBox

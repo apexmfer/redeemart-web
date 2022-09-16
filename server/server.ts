@@ -32,6 +32,8 @@ import CategoryManager from './segmentmanagers/CategoryManager'
 import CategoryController from './controllers/CategoryController'
 import PostController from './controllers/PostController'
 import ThreadController from './controllers/ThreadController'
+import MintCodeDBExtension from './dbextensions/MintCodeDBExtension'
+import DigitalAssetDBExtension from './dbextensions/DigitalAssetDBExtension'
 
 
 require('dotenv').config()
@@ -64,8 +66,8 @@ let serverConfig = serverConfigFile[envmode]
     
     dbExtensions.push(...[
       new DegenAuthExtension(mongoDB),
-      new ThreadDBExtension(mongoDB),
-      new CategoryDBExtension(mongoDB),
+      new MintCodeDBExtension(mongoDB),
+      new DigitalAssetDBExtension(mongoDB),
       new UserDBExtension(mongoDB)
     ])
 
@@ -85,18 +87,18 @@ let serverConfig = serverConfigFile[envmode]
 
     console.log('web3 ready with provider ',serverConfig.web3provider )
     
-    let categoryController = new CategoryController(mongoDB)
-    let postController = new PostController(mongoDB)
-    let threadController = new ThreadController(postController,mongoDB)
+    let digitalAssetProjectController = new DigitalAssetProjectController(mongoDB)
+    let digitalAssetController = new DigitalAssetController(mongoDB)
+    let mintCodeController = new MintCodeController(postController,mongoDB)
     let userController = new UserController(mongoDB)
     let userSessionController = new UserSessionController(mongoDB,userController)
     let oAuthController = new OAuthController(mongoDB,userSessionController)
     //init API Controllers 
 
     let apiControllers = [
-      categoryController, 
-      postController,
-      threadController,
+      digitalAssetProjectController, 
+      digitalAssetController,
+      mintCodeController,
       oAuthController,
       userController,
       userSessionController

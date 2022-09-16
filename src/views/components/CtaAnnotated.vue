@@ -18,7 +18,11 @@
             :fontSize= "{base: 'xl', sm: '2xl', md: '4xl' }"
             lineHeight='110%'
             color='black'>
-            UFO Online Database <br />
+            
+              Digital Collectibles from Local Artists
+            
+            
+             <br />
            
             
 
@@ -26,9 +30,7 @@
           <CText color='gray.500'>
               
               
-              Un-biased and unopinionated science-oriented database for any and all reports of Unidentifiable Flying Objects (UFOs) and Unidentifiable Aerial Phenomena (UAPs).  
-              All reports and encounters may or may not be trustworthy so any and all supportive evidence is encouraged.    
-         
+             Scan physical 'NFT Mint Codes' and claim them into your email account to collect.  Use 'Mint Codes' to redeem on-chain NFTs from your favorite artists.
           </CText>
           <CStack
             direction='column'
@@ -37,11 +39,11 @@
             alignSelf='center'
             position='relative'>
           
-             <CButton variant='link' class="text-neutral-800" colorScheme='blue' size='sm' @click="routeTo($router,{name:'categoriesindex'})" >
-              Recent Activity
+             <CButton variant='link' class="text-neutral-800" colorScheme='blue' size='sm' @click="routeTo($router,{name:'redeem'})" >
+              Redeem a Mint Code
             </CButton>
-             <CButton variant='link' class="text-neutral-500" colorScheme='blue' size='sm' @click="routeTo($router,{name:'threadnew'})" >
-              Add a Report
+             <CButton variant='link' class="text-neutral-500" colorScheme='blue' size='sm' @click="routeTo($router,{name:'learn'})" >
+              Learn More
             </CButton>
              
           </CStack>

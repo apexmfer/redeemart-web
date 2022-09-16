@@ -1,0 +1,22 @@
+{
+    "documentation":[
+    {"title":"Source Code","path":"https://github.com/apexmfer/undergroundart-web"},
+    {"title":"Smart Contract","path":"https://goerli.etherscan.io/address/0x3c0d23ffab351f69116029f63919061e1ae9c142"}
+    ],
+    "quicklinks":[
+        {"title":"Redeem Art","path":"/redeem"},
+        {"title":"Publish","path":"/publish"},
+        {"title":"View Collection","path":"https://testnets.opensea.io/collection/undergroundart"}
+        
+        ],
+
+        "community":[
+            
+            {"title":"Detroit Art DAO","path":"https://detroitartdao.com"}
+       
+            ],
+    "misc":[
+       
+        ]
+    
+}
