@@ -1,8 +1,20 @@
 ### TODO
 
--build specs for post, thread, and category 
+--generate REAL redeemable crypto 'secretmessages' 
 
--build basic frontend 
+
+--user scans a QR code with that real code and it takes them to https://thiswebsite/redeem/:code 
+
+--the user signs in with google OAUTH and links that code to their google account (hopefully we store the code in a cookie or something to remember it -- tricky part )
+
+--The code gets saved onto their account (based on google sign in ) and at any time, the user can redeem the code for a real ONCHAIN nft 
+
+--Add a config param to defined art projects:   codes get burned or not.    That way we can optionally make it such that a code can be used infinite times (until no more nft left) which would be nice in certain circumstances!
+
+
+
+
+
 
 
 #### Tasks 
